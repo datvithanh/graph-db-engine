@@ -6,4 +6,10 @@ class FoodContainsNutrition(StructuredRel):
     metric = StringProperty()
 
 class FoodHasEffect(StructuredRel):
-    pass
+    description = StringProperty()
+
+class FoodAffectCondition(StructuredRel):
+    description = StringProperty()
+
+class FoodAffectConsumerGroup(StructuredRel):
+    description = StringProperty()

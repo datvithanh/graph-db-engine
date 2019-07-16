@@ -1,5 +1,5 @@
 from neomodel import StructuredNode, StringProperty, RelationshipTo, RelationshipFrom, config
-from relationships import *
+from relationships import FoodAffectCondition, FoodAffectConsumerGroup, FoodContainsNutrition, FoodHasEffect
 
 """
 neomodel documentation https://neomodel.readthedocs.io/en/latest/index.html
@@ -12,23 +12,28 @@ class Food(StructuredNode):
     name_vi = StringProperty(unique_index=False)
     nutritions = RelationshipTo('Nutrition', 'CONTAIN', model=FoodContainsNutrition)
     effects = RelationshipTo('Effect', 'HAS', model=FoodHasEffect)
-
+    conditions = RelationshipTo('Condition', 'AFFECT', model=FoodAffectCondition)
 
 class Nutrition(StructuredNode):
     name = StringProperty(unique_index=False)
     foods = RelationshipFrom('Food', 'CONTAIN', model=FoodContainsNutrition)
 
-# class Condition(StructuredNode):
-#     name = StringProperty(unique_index=True)
-
+class Condition(StructuredNode):
+    name = StringProperty(unique_index=True)
+    foods = RelationshipFrom('Food', 'AFFECT', model=FoodAffectCondition)
 
 class Effect(StructuredNode):
     name = StringProperty(unique_index=True)
     # type = {advantages, disadvantages}
     type = StringProperty()
-    description = StringProperty()
     foods = RelationshipFrom('Food', 'HAS', model=FoodHasEffect)    
 
-# harry_potter = Book(title='Harry potter and the..').save()
-# rowling =  Author(name='J. K. Rowling').save()
-# harry_potter.author.connect(rowling)
+# pregnant and breastfeeding women
+# babies and young children
+# kids and teens
+# adults
+# older adults.
+class ConsumerGroup(StructuredNode):
+    name = StringProperty(unique_index=True)
+    name_vi = StringProperty()
+    foods = RelationshipFrom('Food', 'AFFECT', model=FoodAffectConsumerGroup)
