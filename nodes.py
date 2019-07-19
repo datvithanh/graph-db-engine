@@ -1,11 +1,9 @@
-from neomodel import StructuredNode, StringProperty, RelationshipTo, RelationshipFrom, config
+from neomodel import StructuredNode, StringProperty, RelationshipTo, RelationshipFrom
 from relationships import FoodAffectCondition, FoodAffectConsumerGroup, FoodContainsNutrition, FoodHasEffect
 
 """
 neomodel documentation https://neomodel.readthedocs.io/en/latest/index.html
 """
-
-config.DATABASE_URL = 'bolt://neo4j:123456@localhost:7687'
 
 class Food(StructuredNode):
     name_en = StringProperty(unique_index=True)
