@@ -25,7 +25,7 @@ for nutri in nutris:
     nutris_node[nutri] = Nutrition(name=nutri).save()
 
 for x in nparr:
-    food_node[x[0]] = Food(name_en = x[0], name_vi = x[1]).save()
+    food_node[x[0]] = Food(name_en = x[0].lower(), name_vi = x[1]).save()
     for k,v in x[2].items():
         tmp = v.split(' ')
         if float(tmp[0]) > 0 and len(tmp) == 2:

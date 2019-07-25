@@ -1,0 +1,22 @@
+name_enfood,fever,vomiting,diarrhea,diabetes,cardiovascular disease,liver disease,obesity,cancer,weak bones,weak immune system,stomachache,high blood pressure
+beef,no,no,yes,no,no,no,no,no,yes,yes,no,no
+pork,no,no,yes,no,no,no,no,no,no,yes,no,no
+chicken,yes,yes,yes,yes,yes ,no,no ,no,yes,yes,yes,yes
+lamb,no,no,yes,no,no,no,no,no,yes,yes,yes,no
+shrimp,no,no,no,no,no,no,no,no,yes,yes,no,no
+crab,no,no,no,yes,no,no,no,no,yes,yes,no,no
+egg,no,no,yes,no,yes ,moderate,yes,yes,yes,yes,yes,moderate
+lobster,no,no,no,no,no,no,no,no,yes,yes,no,no
+veal,no,np,yes,no,no,no,no,no,yes,yes,no,no
+banana,yes,yes,yes,yes,yes ,yes,yes,yes,yes,yes,yes,yes
+lemon,yes,yes,yes,yes,yes ,yes,yes,yes,yes,yes,yes,yes
+orange,yes,yes,yes,yes,yes ,yes,yes,yes,yes,yes,yes,yes
+avocado,yes,yes,yes,yes,yes,yes,yes,yes,yes,yes,yes,yes
+garlic,yes,yes,yes,yes,yes,yes,yes,yes,yes,yes,yes,yes
+potato,yes,yes,yes,yes,yes,yes,yes,yes,yes,yes,yes,yes
+apple,yes,yes,yes,yes,yes,yes,yes,yes,yes,yes,yes,yes
+cabbage,yes,yes,yes,yes,yes,yes,yes,yes,yes,yes,yes,yes
+broccoli,yes,yes,yes,yes,yes,yes,yes,yes,yes,yes,yes,yes
+asparagus,yes,yes,yes,yes,yes,yes,yes,yes,yes,yes,yes,yes
+yam,yes,yes,yes,yes,yes,yes,yes,yes,yes,yes,yes,yes
+tomatoes,yes,yes,yes,yes,yes,yes,yes,yes,yes,yes,yes,yes

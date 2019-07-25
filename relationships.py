@@ -8,8 +8,9 @@ class FoodContainsNutrition(StructuredRel):
 class FoodHasEffect(StructuredRel):
     description = StringProperty()
 
-class FoodAffectCondition(StructuredRel):
+class FoodAffectHealthIssue(StructuredRel):
     description = StringProperty()
 
 class FoodAffectConsumerGroup(StructuredRel):
     description = StringProperty()
+    status = StringProperty()

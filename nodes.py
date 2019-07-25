@@ -1,5 +1,5 @@
 from neomodel import StructuredNode, StringProperty, RelationshipTo, RelationshipFrom
-from relationships import FoodAffectCondition, FoodAffectConsumerGroup, FoodContainsNutrition, FoodHasEffect
+from relationships import FoodAffectHealthIssue, FoodAffectConsumerGroup, FoodContainsNutrition, FoodHasEffect
 
 """
 neomodel documentation https://neomodel.readthedocs.io/en/latest/index.html
@@ -10,15 +10,17 @@ class Food(StructuredNode):
     name_vi = StringProperty(unique_index=False)
     nutritions = RelationshipTo('Nutrition', 'CONTAIN', model=FoodContainsNutrition)
     effects = RelationshipTo('Effect', 'HAS', model=FoodHasEffect)
-    conditions = RelationshipTo('Condition', 'AFFECT', model=FoodAffectCondition)
+    health_issues = RelationshipTo('HealthIssue', 'AFFECT', model=FoodAffectHealthIssue)
+    consumer_groups = RelationshipTo('ConsumerGroup', 'AFFECT', model=FoodAffectConsumerGroup)
 
 class Nutrition(StructuredNode):
-    name = StringProperty(unique_index=False)
+    name = StringProperty(unique_index=True)
     foods = RelationshipFrom('Food', 'CONTAIN', model=FoodContainsNutrition)
 
-class Condition(StructuredNode):
-    name = StringProperty(unique_index=True)
-    foods = RelationshipFrom('Food', 'AFFECT', model=FoodAffectCondition)
+class HealthIssue(StructuredNode):
+    name_en = StringProperty(unique_index=True)
+    name_vi = StringProperty()
+    foods = RelationshipFrom('Food', 'AFFECT', model=FoodAffectHealthIssue)
 
 class Effect(StructuredNode):
     name = StringProperty(unique_index=True)
@@ -32,6 +34,6 @@ class Effect(StructuredNode):
 # adults
 # older adults.
 class ConsumerGroup(StructuredNode):
-    name = StringProperty(unique_index=True)
+    name_en = StringProperty(unique_index=True)
     name_vi = StringProperty()
     foods = RelationshipFrom('Food', 'AFFECT', model=FoodAffectConsumerGroup)
