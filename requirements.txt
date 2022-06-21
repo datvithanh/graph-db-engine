@@ -3,7 +3,7 @@ neo4j-driver==1.6.3
 neobolt==1.7.13
 neomodel==3.3.1
 neotime==1.7.4
-numpy==1.16.4
+numpy==1.22.0
 pandas==0.24.2
 python-dateutil==2.8.0
 pytz==2019.1
